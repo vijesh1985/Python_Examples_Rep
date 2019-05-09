@@ -1,13 +1,25 @@
 import os
+print("*******************************File Operations*******************************")
 save_path = 'D:\Programming\Python'
-print("File Path To Save All Python Programs : " + save_path)
+filetype = "*.txt"
+print("Current File Path Defined To Save All Python Programs : " + save_path)
+# Check if the defined path is available
 if not os.path.isdir('D:\Programming\Python'):
-    print("Directory Unavailable. Created Newly.")
+    print("Directory is Unavailable. Created Newly.")
     os.makedirs('D:\Programming\Python',mode=777)
 else:
-    print("Directory Already Available")
-name_of_file = input("What is the name of the file: ")
-completeName = os.path.join(save_path, name_of_file+".txt")
+    print("Directory is Already Available")
+password_file_exists = os.path.isfile(save_path + "\\" + filetype)
+print(save_path + "\\" + filetype)
+print(password_file_exists)
+if password_file_exists:
+    for file in os.listdir(save_path):
+        if file.endswith(".txt"):
+            print("There is Already a File Available : " + os.path.join(save_path, file))
+            # os.remove("D:\Programming\Python\*.txt")
+else:
+    name_of_file = input("Create a Password file. Provide FileName : ")
+    completeName = os.path.join(save_path, name_of_file+".txt")
 file1 = open(completeName, "w")
 createUser = 'Home'
 createPass = 'password'
