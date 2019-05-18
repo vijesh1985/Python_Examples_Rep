@@ -1,14 +1,36 @@
 import os
 print("*******************************File Operations*******************************")
-save_path = 'D:\Programming\Python'
+save_path = 'D:\\Programming\\\Python\\'
 filetype = "*.txt"
 print("Current File Path Defined To Save All Python Programs : " + save_path)
 # Check if the defined path is available
 if not os.path.isdir('D:\Programming\Python'):
-    print("Directory is Unavailable. Created Newly.")
     os.makedirs('D:\Programming\Python',mode=777)
+    print("Directory is Unavailable. Created Newly.")
 else:
     print("Directory is Already Available")
+dir_length = len(os.listdir(save_path))
+files = []
+if dir_length != 0:
+    try:
+        current_file = open("logindetails.txt", "r+")
+    except IOError:
+        print("Error: can\'t find file or read data")
+        userpassfile = current_file.read().strip().split()
+    if dir_length == 1:
+        get_user_input = input("There is " + str(dir_length) + "File Available. Do you want to create a new one (Y/N) ? ")
+    else:
+        get_user_input = input("There are " + str(dir_length) + "Files Available. Do you want to create a new one (Y/N) ? ")
+    if upper(get_user_input) == 'Y':
+        loginUser = input('What is your username? ')
+        if (loginUser in userpassfile):
+            print("User Already Available")
+        else:
+            loginPass = input('What is your password? ')
+
+    else:
+
+else:
 password_file_exists = os.path.isfile(save_path + "\\" + filetype)
 print(save_path + "\\" + filetype)
 print(password_file_exists)
