@@ -22,7 +22,7 @@ print("3.Multiply")
 print("4.Divide")
 
 # Take input from the user
-choice = input("Enter choice(1/2/3/4):")
+choice = input("Enter choice(1/2/3/4): ")
 
 num1 = int(input("Enter first number: "))
 num2 = int(input("Enter second number: "))
