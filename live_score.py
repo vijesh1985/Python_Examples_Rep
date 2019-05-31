@@ -15,7 +15,7 @@ def fun():
     # connecting to TWILIO API
     # twilioClient = Client(accountSid, authToken)
     # myTwilioNumber = ""
-    # destCellPhone = ""
+    # destCellPhone = "" 
 
     # url = "http://synd.cricbuzz.com/j2me/1.0/livematches.xml"
     # to extract the matches
@@ -28,7 +28,7 @@ def fun():
     for i in details:
         # traversing i
         if 'mchstate' in i:
-            if i['mchstate'] == 'inprogress':
+            if i['mchstate'] == 'inprogress' and i['srs'] == 'ICC Cricket World Cup 2019':
             # if i['mchstate'] == 'innings break':
             # if i['mchstate'] in ('inprogress','innings break'):
                 id = i['id']
