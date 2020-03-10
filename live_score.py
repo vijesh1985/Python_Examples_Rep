@@ -28,7 +28,8 @@ def fun():
     for i in details:
         # traversing i
         if 'mchstate' in i:
-            if i['mchstate'] == 'inprogress' and i['srs'] == 'ICC Cricket World Cup 2019':
+            # print('Series ==>' + i['srs'])  # List All Current Series
+            if i['mchstate'] == 'inprogress' and i['srs'] == 'India tour of New Zealand 2020':
             # if i['mchstate'] == 'innings break':
             # if i['mchstate'] in ('inprogress','innings break'):
                 id = i['id']
